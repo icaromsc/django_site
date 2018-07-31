@@ -30,7 +30,6 @@ def current_datetime(request):
     return render_to_response('polls/current_datetime.html', {'current_date': now})
 
 def hours_ahead(request, hours):
-    #hours = int(hours)
     dt = datetime.datetime.now() + datetime.timedelta(hours=hours)
     html = "<html><body>In %s hour(s), it will be %s.</body></html>" % (hours, dt)
     return HttpResponse(html)
